@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- ============================================================
+  SEO — edit the title, description and canonical URL below.
+============================================================ -->
+<title>Timeless Tote | Elegant Bags & Handbags</title>
+<meta name="description" content="Discover elegant and timeless bags from Timeless Tote. Explore our collection and order your favorite style.">
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN.com/"> <!-- ADD YOUR REAL DOMAIN HERE -->
+<meta property="og:title" content="Timeless Tote | Elegant Bags & Handbags">
+<meta property="og:description" content="Discover elegant and timeless bags from Timeless Tote. Explore our collection and order your favorite style.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN.com/"> <!-- ADD YOUR REAL DOMAIN HERE -->
+<meta name="twitter:card" content="summary_large_image">
+
+<!--
+  ADD YOUR ANALYTICS ID HERE.
+  This site sends no analytics anywhere until you paste a real
+  Google Analytics / Meta Pixel snippet in place of this comment.
+  Example:
+  <script async src="https://www.googletagmanager.com/gtag/js?id=REPLACE_ME"></script>
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ==========================================================
+     DESIGN TOKENS — change these to restyle the whole site.
+  ========================================================== */
+  :root{
+    --ivory:#FBF6EF;
+    --beige:#F1E6D6;
+    --espresso:#3A2B20;
+    --espresso-soft:#6B594C;
+    --taupe:#A9906F;
+    --taupe-deep:#8A7458;
+    --white:#FFFFFF;
+    --border:#E6D9C6;
+    --success:#4C6B4F;
+
+    --font-serif:'Cormorant Garamond', Georgia, serif;
+    --font-sans:'Work Sans', system-ui, sans-serif;
+
+    --radius:2px;
+    --radius-lg:4px;
+    --container:1240px;
+
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top:78px;}
+  body{
+    margin:0; background:var(--ivory); color:var(--espresso);
+    font-family:var(--font-sans); line-height:1.6; -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:var(--font-serif); font-weight:600; color:var(--espresso); line-height:1.15; margin:0 0 14px;}
+  h1{font-size:clamp(2.3rem,5vw,3.6rem); font-weight:700;}
+  h2{font-size:clamp(1.9rem,3.4vw,2.6rem);}
+  h3{font-size:1.3rem;}
+  p{color:var(--espresso-soft); margin:0 0 16px;}
+  a{color:inherit; text-decoration:none;}
+  img,svg{max-width:100%; display:block;}
+  button{font-family:var(--font-sans); cursor:pointer;}
+  .container{max-width:var(--container); margin:0 auto; padding:0 24px;}
+  @media (min-width:768px){.container{padding:0 40px;}}
+
+  .visually-hidden{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap;}
+  .skip-link{position:absolute; left:12px; top:-60px; background:var(--espresso); color:#fff; padding:10px 16px; border-radius:var(--radius); z-index:200; transition:top .15s ease;}
+  .skip-link:focus{top:12px;}
+
+  :focus-visible{outline:2px solid var(--taupe-deep); outline-offset:3px;}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:14px 28px; border-radius:var(--radius); font-size:0.92rem; font-weight:600;
+    letter-spacing:0.02em; border:1px solid transparent; min-height:48px;
+    transition:background .18s ease, color .18s ease, border-color .18s ease, transform .12s ease;
+  }
+  .btn:active{transform:scale(0.98);}
+  .btn-primary{background:var(--espresso); color:#fff;}
+  .btn-primary:hover{background:#2A1E15;}
+  .btn-outline{background:transparent; color:var(--espresso); border-color:var(--espresso);}
+  .btn-outline:hover{background:var(--espresso); color:#fff;}
+  .btn-whatsapp{background:var(--taupe); color:#fff;}
+  .btn-whatsapp:hover{background:var(--taupe-deep);}
+  .btn-block{width:100%;}
+  .btn-sm{padding:10px 18px; min-height:auto; font-size:0.84rem;}
+
+  .eyebrow{font-size:0.78rem; letter-spacing:0.14em; color:var(--taupe-deep); font-weight:600; margin-bottom:10px; text-transform:uppercase;}
+
+  /* ---------- header ---------- */
+  header.site-header{
+    position:sticky; top:0; z-index:100; background:rgba(251,246,239,0.94); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-row{display:flex; align-items:center; justify-content:space-between; padding:18px 0;}
+  .logo{font-family:var(--font-serif); font-size:1.5rem; font-weight:700; letter-spacing:0.02em;}
+  nav.primary-nav{display:none; gap:34px;}
+  nav.primary-nav a{font-size:0.92rem; font-weight:500; padding:6px 0; border-bottom:1px solid transparent;}
+  nav.primary-nav a:hover, nav.primary-nav a.active{border-bottom-color:var(--espresso);}
+  .nav-actions{display:flex; align-items:center; gap:14px;}
+  .hamburger{
+    display:flex; flex-direction:column; justify-content:center; gap:5px; width:42px; height:42px;
+    background:none; border:1px solid var(--border); border-radius:var(--radius);
+  }
+  .hamburger span{display:block; height:2px; width:20px; background:var(--espresso); margin:0 auto; transition:transform .2s ease, opacity .2s ease;}
+  .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  @media (min-width:900px){
+    nav.primary-nav{display:flex;}
+    .hamburger{display:none;}
+  }
+
+  .mobile-menu{
+    max-height:0; overflow:hidden; border-top:1px solid var(--border); background:var(--ivory);
+    transition:max-height .28s ease;
+  }
+  .mobile-menu.open{max-height:420px;}
+  .mobile-menu .container{padding:18px 24px 26px; display:flex; flex-direction:column; gap:4px;}
+  .mobile-menu a{padding:12px 4px; font-size:1.02rem; border-bottom:1px solid var(--border);}
+  .mobile-menu .btn{margin-top:12px;}
+
+  /* ---------- hero ---------- */
+  .hero{padding:56px 0 48px;}
+  .hero-grid{display:grid; gap:36px; align-items:center;}
+  @media (min-width:900px){.hero-grid{grid-template-columns:1fr 1fr; gap:60px;}}
+  .hero-copy p{max-width:46ch; font-size:1.05rem;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:8px;}
+  .hero-image-frame{
+    background:var(--beige); border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:4/5;
+    border:1px solid var(--border);
+  }
+
+  /* ---------- features strip ---------- */
+  .features-strip{border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:34px 0;}
+  .features-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:26px; text-align:center;}
+  @media (min-width:768px){.features-grid{grid-template-columns:repeat(4,1fr);}}
+  .feature-item .ficon{margin:0 auto 10px;}
+  .feature-item h4{font-size:0.94rem; font-family:var(--font-sans); font-weight:600; margin:0 0 4px;}
+  .feature-item p{font-size:0.82rem; margin:0;}
+
+  /* ---------- section spacing ---------- */
+  section.section{padding:64px 0;}
+  .section-head{max-width:640px; margin:0 auto 40px; text-align:center;}
+  .section-head p{margin:0;}
+
+  /* ---------- product grid ---------- */
+  .product-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;}
+  @media (min-width:700px){.product-grid{grid-template-columns:repeat(3,1fr); gap:26px;}}
+  @media (min-width:1100px){.product-grid.cols-4{grid-template-columns:repeat(4,1fr);}}
+
+  .product-card{
+    background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg);
+    overflow:hidden; display:flex; flex-direction:column; transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .product-card:hover{transform:translateY(-3px); box-shadow:0 14px 30px rgba(58,43,32,0.09);}
+  .product-media{aspect-ratio:1/1; background:var(--beige); overflow:hidden;}
+  .product-media svg{transition:transform .35s ease;}
+  .product-card:hover .product-media svg{transform:scale(1.05);}
+  .product-body{padding:16px; display:flex; flex-direction:column; gap:6px; flex:1;}
+  .product-body h3{font-size:1.08rem; margin:0;}
+  .product-price{font-weight:600; font-size:0.95rem;}
+  .product-desc{font-size:0.84rem; margin:0 0 10px; flex:1;}
+  .product-actions{display:flex; gap:8px; margin-top:auto;}
+  .product-actions .btn{flex:1; padding:11px 10px; font-size:0.78rem;}
+
+  .filter-bar{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:30px; align-items:center; justify-content:space-between;}
+  .filter-chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    padding:9px 16px; border-radius:999px; border:1px solid var(--border); background:var(--white);
+    font-size:0.84rem; font-weight:500;
+  }
+  .chip.active{background:var(--espresso); color:#fff; border-color:var(--espresso);}
+  select.sort-select{padding:9px 12px; border:1px solid var(--border); border-radius:var(--radius); background:var(--white); font-size:0.84rem;}
+
+  /* ---------- product detail ---------- */
+  .pd-grid{display:grid; gap:36px;}
+  @media (min-width:900px){.pd-grid{grid-template-columns:1fr 1fr; gap:56px;}}
+  .pd-gallery-main{aspect-ratio:1/1; background:var(--beige); border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border); margin-bottom:12px;}
+  .pd-thumbs{display:flex; gap:10px;}
+  .pd-thumb{width:70px; height:70px; border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); background:var(--beige); cursor:pointer;}
+  .pd-price{font-size:1.25rem; font-weight:600; margin-bottom:14px;}
+  .pd-meta-row{display:flex; gap:10px; margin:16px 0; flex-wrap:wrap;}
+  .swatch{width:26px; height:26px; border-radius:50%; border:1px solid var(--border); display:inline-block;}
+  .pd-detail-table{width:100%; border-collapse:collapse; margin:18px 0; font-size:0.9rem;}
+  .pd-detail-table td{padding:9px 0; border-bottom:1px solid var(--border); color:var(--espresso-soft);}
+  .pd-detail-table td:first-child{font-weight:600; color:var(--espresso); width:40%;}
+  .pd-cta-box{background:var(--beige); border-radius:var(--radius-lg); padding:22px; margin-top:22px;}
+
+  /* ---------- instagram ---------- */
+  .insta-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:8px;}
+  @media (min-width:700px){.insta-grid{grid-template-columns:repeat(6,1fr);}}
+  .insta-tile{aspect-ratio:1/1; background:var(--beige); overflow:hidden; position:relative;}
+  .insta-tile:hover .insta-overlay{opacity:1;}
+  .insta-overlay{position:absolute; inset:0; background:rgba(58,43,32,0.45); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .2s ease;}
+  .insta-overlay svg{width:22px; height:22px;}
+
+  /* ---------- reviews ---------- */
+  .review-grid{display:grid; gap:20px;}
+  @media (min-width:768px){.review-grid{grid-template-columns:repeat(3,1fr);}}
+  .review-card{background:var(--white); border:1px dashed var(--border); border-radius:var(--radius-lg); padding:24px;}
+  .review-card .stars{color:var(--taupe); margin-bottom:10px; letter-spacing:2px;}
+  .review-card .placeholder-note{font-size:0.72rem; color:var(--taupe-deep); margin-top:12px; text-transform:uppercase; letter-spacing:0.06em;}
+
+  /* ---------- faq ---------- */
+  .faq-item{border-bottom:1px solid var(--border);}
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none; padding:20px 4px;
+    display:flex; justify-content:space-between; align-items:center; font-family:var(--font-sans);
+    font-size:1rem; font-weight:600; color:var(--espresso);
+  }
+  .faq-q .plus{transition:transform .2s ease; font-size:1.3rem; color:var(--taupe-deep); font-weight:400;}
+  .faq-q[aria-expanded="true"] .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease;}
+  .faq-a-inner{padding:0 4px 20px; font-size:0.92rem;}
+
+  /* ---------- shipping/returns bracket placeholders ---------- */
+  .placeholder-tag{background:var(--beige); color:var(--taupe-deep); padding:2px 8px; border-radius:3px; font-weight:600; font-size:0.88em;}
+
+  /* ---------- about ---------- */
+  .about-image{aspect-ratio:16/10; background:var(--beige); border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border); margin:34px 0;}
+
+  /* ---------- contact ---------- */
+  .contact-grid{display:grid; gap:40px;}
+  @media (min-width:900px){.contact-grid{grid-template-columns:1fr 1fr;}}
+  .contact-links{display:flex; flex-direction:column; gap:14px; margin-top:20px;}
+  .contact-link-item{display:flex; align-items:center; gap:12px; padding:14px 16px; background:var(--white); border:1px solid var(--border); border-radius:var(--radius); font-size:0.92rem; font-weight:500;}
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:0.84rem; font-weight:600; margin-bottom:6px;}
+  .field input, .field textarea{
+    width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:var(--radius);
+    font-family:var(--font-sans); font-size:0.94rem; background:var(--white); color:var(--espresso);
+  }
+  .field textarea{min-height:120px; resize:vertical;}
+  .field input:focus, .field textarea:focus{border-color:var(--taupe-deep);}
+  .form-success{background:#EBF0EA; color:var(--success); padding:14px 16px; border-radius:var(--radius); font-size:0.9rem; display:none; margin-top:14px;}
+  .form-success.show{display:block;}
+
+  /* ---------- footer ---------- */
+  footer.site-footer{background:var(--espresso); color:#EFE6DA; padding:56px 0 30px; margin-top:40px;}
+  footer.site-footer .logo{color:#fff;}
+  .footer-grid{display:grid; gap:30px; margin-bottom:40px;}
+  @media (min-width:768px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr;}}
+  footer.site-footer a{color:#D8CBB8; font-size:0.9rem;}
+  footer.site-footer a:hover{color:#fff;}
+  footer.site-footer h4{color:#fff; font-family:var(--font-sans); font-size:0.86rem; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:14px;}
+  .footer-nav-list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.14); padding-top:22px; font-size:0.78rem; color:#B7A990; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+
+  /* ---------- sticky mobile whatsapp ---------- */
+  .sticky-whatsapp{
+    position:fixed; bottom:calc(18px + env(safe-area-inset-bottom,0px)); right:18px; z-index:90;
+    width:58px; height:58px; border-radius:50%; background:var(--taupe); color:#fff;
+    display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(58,43,32,0.28); border:none;
+  }
+  @media (min-width:900px){.sticky-whatsapp{display:none;}}
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s ease;}
+  .reveal.in{opacity:1; transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important; animation:none !important;}
+    .reveal{opacity:1; transform:none;}
+  }
+
+  .page{display:none;}
+  .page.active{display:block;}
+
+  .badge-sample{display:inline-block; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--taupe-deep); background:var(--beige); padding:3px 9px; border-radius:3px; margin-bottom:10px; font-weight:600;}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ============================================================
+     HEADER / NAVIGATION
+============================================================ -->
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="#/home" class="logo" data-route="home">Timeless Tote</a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#/shop" data-route="shop">Shop</a>
+      <a href="#/about" data-route="about">About</a>
+      <a href="#/faq" data-route="faq">FAQ</a>
+      <a href="#/contact" data-route="contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#/shop" class="btn btn-outline btn-sm" style="display:none" id="desktopShopBtn" data-route="shop">Shop Now</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="container">
+      <a href="#/home" data-route="home">Home</a>
+      <a href="#/shop" data-route="shop">Shop</a>
+      <a href="#/about" data-route="about">About</a>
+      <a href="#/faq" data-route="faq">FAQ</a>
+      <a href="#/shipping" data-route="shipping">Shipping &amp; Returns</a>
+      <a href="#/contact" data-route="contact">Contact</a>
+      <button class="btn btn-whatsapp btn-block" id="mobileWhatsappBtn" type="button">Order on WhatsApp</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================
+       HOME PAGE
+  ============================================================ -->
+  <div class="page" id="page-home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Timeless Tote</p>
+          <h1>Carry Your Style, Timelessly.</h1>
+          <p>Curated bags designed to add an effortless touch of elegance to every look.</p>
+          <div class="hero-actions">
+            <a href="#/shop" class="btn btn-primary" data-route="shop">Shop Collection</a>
+            <button class="btn btn-whatsapp" id="heroWhatsappBtn" type="button">Order on WhatsApp</button>
+          </div>
+        </div>
+        <div class="hero-image-frame reveal" id="heroImageSlot"></div>
+      </div>
+    </section>
+
+    <section class="features-strip">
+      <div class="container features-grid">
+        <div class="feature-item reveal">
+          <div class="ficon">${'{ICON_STAR}'}</div>
+          <h4>Curated Styles</h4>
+          <p>A considered edit, not an endless catalogue.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="ficon">${'{ICON_CHECK}'}</div>
+          <h4>Quality Checked</h4>
+          <p>Every piece is looked over before it ships.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="ficon">${'{ICON_CHAT}'}</div>
+          <h4>Easy Ordering</h4>
+          <p>Message us on WhatsApp and we'll take it from there.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="ficon">${'{ICON_TRUCK}'}</div>
+          <h4>Delivery Across Pakistan</h4>
+          <p>We ship nationwide from our home base.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Featured</p>
+          <h2>Featured Collection</h2>
+          <p>Discover the pieces made to complement your everyday style.</p>
+        </div>
+        <div class="product-grid reveal" id="featuredGrid"></div>
+        <div style="text-align:center; margin-top:36px;">
+          <a href="#/shop" class="btn btn-outline" data-route="shop">View Full Collection</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Community</p>
+          <h2>See More on Instagram</h2>
+          <p>Follow Timeless Tote for new arrivals, styling inspiration and updates.</p>
+        </div>
+        <div class="insta-grid reveal" id="instaGrid"></div>
+        <div style="text-align:center; margin-top:28px;">
+          <a href="https://www.instagram.com/timeless_tote/" target="_blank" rel="noopener" class="btn btn-primary">Follow @timeless_tote</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Community</p>
+          <h2>Loved by Our Customers</h2>
+          <p style="font-size:0.85rem;">The three cards below are placeholders — replace them with genuine customer feedback before publishing.</p>
+        </div>
+        <div class="review-grid reveal">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Add real customer review here."</p>
+            <p style="margin:0; font-weight:600; color:var(--espresso);">— Add customer name here</p>
+            <div class="placeholder-note">Placeholder — replace before launch</div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Add real customer review here."</p>
+            <p style="margin:0; font-weight:600; color:var(--espresso);">— Add customer name here</p>
+            <div class="placeholder-note">Placeholder — replace before launch</div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Add real customer review here."</p>
+            <p style="margin:0; font-weight:600; color:var(--espresso);">— Add customer name here</p>
+            <div class="placeholder-note">Placeholder — replace before launch</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================================================
+       SHOP PAGE
+  ============================================================ -->
+  <div class="page" id="page-shop">
+    <section class="section" style="padding-bottom:20px;">
+      <div class="container">
+        <div class="section-head reveal" style="margin-bottom:30px;">
+          <p class="eyebrow">Collection</p>
+          <h2>Shop Timeless Tote</h2>
+          <p>Find your next everyday favorite.</p>
+        </div>
+        <div class="filter-bar">
+          <div class="filter-chips" id="filterChips"></div>
+          <select class="sort-select" id="sortSelect" aria-label="Sort products">
+            <option value="default">Sort: Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+          </select>
+        </div>
+        <div class="product-grid cols-4" id="shopGrid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================================================
+       PRODUCT DETAIL PAGE
+  ============================================================ -->
+  <div class="page" id="page-product">
+    <section class="section">
+      <div class="container">
+        <a href="#/shop" data-route="shop" style="font-size:0.85rem; color:var(--espresso-soft);">← Back to Shop</a>
+        <div class="pd-grid" style="margin-top:20px;" id="productDetailSlot"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================================================
+       ABOUT PAGE
+  ============================================================ -->
+  <div class="page" id="page-about">
+    <section class="section">
+      <div class="container" style="max-width:760px;">
+        <p class="eyebrow reveal">About Us</p>
+        <h2 class="reveal">Our Story</h2>
+        <p class="reveal" style="font-size:1.08rem;">Timeless Tote was created with a simple idea: finding a beautiful bag should feel effortless.</p>
+        <p class="reveal">We curate stylish bags for people who value timeless design and everyday elegance — pieces that move easily from a morning coffee run to an evening out, without ever feeling like they're trying too hard. Our collection is chosen with care, one style at a time, rather than mass-produced by the season.</p>
+        <div class="about-image reveal" id="aboutImageSlot"></div>
+        <p class="reveal">We're a small, Instagram-based brand, and we're glad you found us. If you have any questions about a piece before you order, we're just a message away.</p>
+        <a href="#/shop" class="btn btn-primary reveal" data-route="shop">Shop the Collection</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================================================
+       FAQ PAGE
+  ============================================================ -->
+  <div class="page" id="page-faq">
+    <section class="section">
+      <div class="container" style="max-width:760px;">
+        <p class="eyebrow reveal">Support</p>
+        <h2 class="reveal">Frequently Asked Questions</h2>
+        <p class="reveal" style="font-size:0.85rem; margin-bottom:30px;">Answers below marked in brackets are placeholders — replace them with your real, business-specific information.</p>
+        <div id="faqList"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================================================
+       SHIPPING & RETURNS PAGE
+  ============================================================ -->
+  <div class="page" id="page-shipping">
+    <section class="section">
+      <div class="container" style="max-width:760px;">
+        <p class="eyebrow reveal">Policies</p>
+        <h2 class="reveal">Shipping &amp; Returns</h2>
+
+        <h3>Order Confirmation</h3>
+        <p>Once you place an order via WhatsApp, we'll confirm the details with you directly before it's finalized, including price, color and delivery address.</p>
+
+        <h3>Estimated Delivery Time</h3>
+        <p>Standard delivery time: <span class="placeholder-tag">[ADD YOUR DELIVERY TIME HERE]</span></p>
+
+        <h3>Delivery Charges</h3>
+        <p>Shipping charge: <span class="placeholder-tag">[ADD YOUR SHIPPING CHARGE HERE]</span></p>
+
+        <h3>Exchange Policy</h3>
+        <p><span class="placeholder-tag">[ADD YOUR EXCHANGE POLICY HERE]</span></p>
+
+        <h3>Return Policy</h3>
+        <p><span class="placeholder-tag">[ADD YOUR RETURN POLICY HERE]</span></p>
+
+        <p style="margin-top:30px;">Questions about an order? <a href="#/contact" data-route="contact" style="text-decoration:underline;">Get in touch</a>.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================================================
+       CONTACT PAGE
+  ============================================================ -->
+  <div class="page" id="page-contact">
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal" style="text-align:left; margin:0 0 36px;">
+          <p class="eyebrow">Get in touch</p>
+          <h2>Let's Talk</h2>
+          <p>Have a question about a product or your order? We'd love to hear from you.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="reveal">
+            <h3 style="font-size:1.05rem;">Prefer WhatsApp?</h3>
+            <p>The fastest way to reach us — usually within the same day.</p>
+            <button class="btn btn-whatsapp" id="contactWhatsappBtn" type="button">Chat with us</button>
+            <div class="contact-links">
+              <a class="contact-link-item" href="https://www.instagram.com/timeless_tote/" target="_blank" rel="noopener">Instagram — @timeless_tote</a>
+              <a class="contact-link-item" href="mailto:hello@REPLACE-EMAIL.com">hello@REPLACE-EMAIL.com <span style="color:var(--taupe-deep); font-weight:600; font-size:0.78rem; margin-left:auto;">EDIT ME</span></a>
+            </div>
+          </div>
+          <div class="reveal">
+            <form id="contactForm" novalidate>
+              <div class="field">
+                <label for="cf_name">Name</label>
+                <input type="text" id="cf_name" name="name" required>
+              </div>
+              <div class="field">
+                <label for="cf_email">Email</label>
+                <input type="email" id="cf_email" name="email" required>
+              </div>
+              <div class="field">
+                <label for="cf_message">Message</label>
+                <textarea id="cf_message" name="message" required></textarea>
+              </div>
+              <button class="btn btn-primary btn-block" type="submit">Send Message</button>
+              <div class="form-success" id="formSuccess" role="status">Thanks for reaching out — we'll get back to you soon. (This form doesn't send yet — connect it to an email service or backend before launch.)</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">Timeless Tote</div>
+        <p style="margin-top:10px; max-width:34ch;">Timeless pieces. Effortless style.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul class="footer-nav-list">
+          <li><a href="#/shop" data-route="shop">Shop</a></li>
+          <li><a href="#/about" data-route="about">About</a></li>
+          <li><a href="#/faq" data-route="faq">FAQ</a></li>
+          <li><a href="#/shipping" data-route="shipping">Shipping &amp; Returns</a></li>
+          <li><a href="#/contact" data-route="contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul class="footer-nav-list">
+          <li><a href="https://www.instagram.com/timeless_tote/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="#" id="footerWhatsappBtn">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Timeless Tote. All rights reserved.</span>
+      <span>Built with care for Instagram shoppers.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="sticky-whatsapp" id="stickyWhatsappBtn" aria-label="Order on WhatsApp" type="button">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M17.6 6.3A8.9 8.9 0 0 0 12 4a8.9 8.9 0 0 0-7.9 13.1L3 21l4-1a8.9 8.9 0 0 0 5 1.5A9 9 0 0 0 21 12.5a8.9 8.9 0 0 0-3.4-6.2Z" stroke="#fff" stroke-width="1.5"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5.6 0 1-.5.9-1l-.3-1a1 1 0 0 0-1-.7l-.9.2a4 4 0 0 1-2.7-2.7l.2-.9a1 1 0 0 0-.7-1l-1-.3c-.5-.1-1 .3-1 .9Z" fill="#fff"/></svg>
+</button>
+
+<script>
+/* ============================================================
+   CONFIG — the two things you'll edit most often.
+============================================================ */
+
+// 1) Your WhatsApp number, international format, no + or spaces.
+// Example: "923001234567". This is a placeholder — replace it.
+const WHATSAPP_NUMBER = "92XXXXXXXXXX";
+
+function buildWhatsappLink(productName){
+  const base = productName
+    ? `Hi Timeless Tote! I'm interested in ordering the ${productName}. Please share the details.`
+    : `Hi Timeless Tote! I'd like to know more about your bags.`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(base)}`;
+}
+
+/* ============================================================
+   HOW TO ADD YOUR OWN PRODUCTS
+   ------------------------------------------------------------
+   1. Copy one object inside the PRODUCTS array below.
+   2. Change "id" to a new unique number.
+   3. Change "name", "price" and "description".
+   4. Set "category" to one of: "Totes", "Shoulder Bags",
+      "Crossbody", "Mini Bags".
+   5. Replace "image" with your real photo URL once you host
+      your own images (a normal https:// link works fine on a
+      real website; this preview uses drawn placeholders instead
+      of remote photos).
+   6. Add real entries to "colors" (e.g. ["Black","Tan","Cream"]).
+   7. Fill in "material" and "dimensions" with real details.
+   8. Set "availability" to true or false.
+   That's it — every page on the site reads from this one array.
+============================================================ */
+
+// SAMPLE PRODUCTS — replace all of these with your real catalogue.
+const PRODUCTS = [
+  { id:1, name:"Classic Shoulder Bag", price:4999, category:"Shoulder Bags",
+    description:"A structured everyday shoulder bag with a timeless silhouette.",
+    image:"placeholder", additionalImages:["placeholder","placeholder"],
+    colors:["Espresso","Tan"], material:"[ADD MATERIAL HERE]", dimensions:"[ADD DIMENSIONS HERE]", availability:true },
+  { id:2, name:"Everyday Tote", price:5499, category:"Totes",
+    description:"Roomy enough for the day, refined enough for anywhere it takes you.",
+    image:"placeholder", additionalImages:["placeholder","placeholder"],
+    colors:["Cream","Black"], material:"[ADD MATERIAL HERE]", dimensions:"[ADD DIMENSIONS HERE]", availability:true },
+  { id:3, name:"Minimal Crossbody", price:3999, category:"Crossbody",
+    description:"A pared-back crossbody for when you want to travel light.",
+    image:"placeholder", additionalImages:["placeholder","placeholder"],
+    colors:["Taupe"], material:"[ADD MATERIAL HERE]", dimensions:"[ADD DIMENSIONS HERE]", availability:true },
+  { id:4, name:"Signature Handbag", price:6499, category:"Shoulder Bags",
+    description:"Our most versatile silhouette, dressed up or down with ease.",
+    image:"placeholder", additionalImages:["placeholder","placeholder"],
+    colors:["Espresso","Cream","Black"], material:"[ADD MATERIAL HERE]", dimensions:"[ADD DIMENSIONS HERE]", availability:true },
+  { id:5, name:"Classic Mini Bag", price:3499, category:"Mini Bags",
+    description:"A compact companion for the essentials, nothing more.",
+    image:"placeholder", additionalImages:["placeholder","placeholder"],
+    colors:["Tan","Black"], material:"[ADD MATERIAL HERE]", dimensions:"[ADD DIMENSIONS HERE]", availability:true },
+  { id:6, name:"Evening Shoulder Bag", price:5999, category:"Shoulder Bags",
+    description:"A quietly elegant shoulder bag for evenings that matter.",
+    image:"placeholder", additionalImages:["placeholder","placeholder"],
+    colors:["Black"], material:"[ADD MATERIAL HERE]", dimensions:"[ADD DIMENSIONS HERE]", availability:false },
+];
+
+function formatPKR(n){ return "PKR " + n.toLocaleString("en-PK"); }
+
+/* ============================================================
+   PLACEHOLDER ARTWORK
+   This site uses drawn placeholders instead of remote stock
+   photos, so it's obvious exactly which images you still need
+   to replace with your own product photography.
+============================================================ */
+function bagIconSVG(size){
+  return `<svg width="${size}" height="${size}" viewBox="0 0 48 48" fill="none" style="opacity:0.55">
+    <path d="M14 18V14a10 10 0 0 1 20 0v4" stroke="#8A7458" stroke-width="2"/>
+    <rect x="8" y="18" width="32" height="22" rx="3" stroke="#8A7458" stroke-width="2"/>
+    <path d="M8 26h32" stroke="#8A7458" stroke-width="1.2" opacity="0.5"/>
+  </svg>`;
+}
+function placeholderBlock(label, big){
+  const size = big ? 72 : 40;
+  return `<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--beige);gap:10px;" role="img" aria-label="Placeholder photo — replace with your product image of ${label}">
+    ${bagIconSVG(size)}
+    <span style="font-family:var(--font-sans); font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:#8A7458;">Your Photo Here</span>
+  </div>`;
+}
+const ICONS = {
+  star:`<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A7458" stroke-width="1.5"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6L12 3z"/></svg>`,
+  check:`<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A7458" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>`,
+  chat:`<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A7458" stroke-width="1.5"><path d="M4 5h16v11H8l-4 4V5z"/></svg>`,
+  truck:`<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A7458" stroke-width="1.5"><rect x="2" y="7" width="12" height="9"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="6.5" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>`,
+};
+
+/* ============================================================
+   RENDER HELPERS
+============================================================ */
+function productCard(p){
+  return `
+  <div class="product-card">
+    <div class="product-media">${placeholderBlock(p.name)}</div>
+    <div class="product-body">
+      <span class="badge-sample">Sample product</span>
+      <h3>${p.name}</h3>
+      <div class="product-price">${formatPKR(p.price)}</div>
+      <p class="product-desc">${p.description}</p>
+      <div class="product-actions">
+        <a href="#/product/${p.id}" data-route="product" data-id="${p.id}" class="btn btn-outline">View Details</a>
+        <button class="btn btn-whatsapp order-btn" data-name="${p.name}" type="button">Order Now</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderFeatured(){
+  document.getElementById('featuredGrid').innerHTML = PRODUCTS.slice(0,6).map(productCard).join('');
+}
+
+function renderInstaGrid(){
+  document.getElementById('instaGrid').innerHTML = Array.from({length:6}).map((_,i)=>`
+    <a class="insta-tile" href="https://www.instagram.com/timeless_tote/" target="_blank" rel="noopener" aria-label="View on Instagram">
+      ${placeholderBlock('Instagram post '+(i+1))}
+      <div class="insta-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg></div>
+    </a>`).join('');
+}
+
+let currentCategory = 'All';
+let currentSort = 'default';
+
+function renderFilterChips(){
+  const cats = ['All','Totes','Shoulder Bags','Crossbody','Mini Bags'];
+  document.getElementById('filterChips').innerHTML = cats.map(c=>
+    `<button class="chip ${currentCategory===c?'active':''}" data-cat="${c}">${c}</button>`).join('');
+  document.querySelectorAll('.chip').forEach(chip=>{
+    chip.addEventListener('click', ()=>{ currentCategory = chip.dataset.cat; renderShopGrid(); renderFilterChips(); });
+  });
+}
+
+function renderShopGrid(){
+  let list = currentCategory==='All' ? [...PRODUCTS] : PRODUCTS.filter(p=>p.category===currentCategory);
+  if (currentSort==='low') list.sort((a,b)=>a.price-b.price);
+  if (currentSort==='high') list.sort((a,b)=>b.price-a.price);
+  document.getElementById('shopGrid').innerHTML = list.length ? list.map(productCard).join('')
+    : `<p style="grid-column:1/-1; text-align:center; padding:40px 0;">No products in this category yet.</p>`;
+}
+
+function renderProductDetail(id){
+  const p = PRODUCTS.find(x=>x.id===Number(id));
+  const slot = document.getElementById('productDetailSlot');
+  if (!p){ slot.innerHTML = `<p>Product not found.</p>`; return; }
+  slot.innerHTML = `
+    <div>
+      <div class="pd-gallery-main" id="pdMainImage">${placeholderBlock(p.name, true)}</div>
+      <div class="pd-thumbs">
+        <div class="pd-thumb">${placeholderBlock(p.name)}</div>
+        <div class="pd-thumb">${placeholderBlock(p.name)}</div>
+        <div class="pd-thumb">${placeholderBlock(p.name)}</div>
+      </div>
+    </div>
+    <div>
+      <span class="badge-sample">Sample product</span>
+      <h1 style="font-size:2rem;">${p.name}</h1>
+      <div class="pd-price">${formatPKR(p.price)}</div>
+      <p>${p.description}</p>
+
+      <div>
+        <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:8px;">Available colors</label>
+        <div class="pd-meta-row">
+          ${p.colors.map(c=>`<span class="swatch" title="${c}" aria-label="${c}"></span>`).join('')}
+        </div>
+      </div>
+
+      <table class="pd-detail-table">
+        <tr><td>Material</td><td>${p.material}</td></tr>
+        <tr><td>Dimensions</td><td>${p.dimensions}</td></tr>
+        <tr><td>Availability</td><td>${p.availability ? 'In stock' : 'Currently unavailable'}</td></tr>
+        <tr><td>Delivery</td><td><span class="placeholder-tag">[ADD YOUR DELIVERY TIME HERE]</span></td></tr>
+        <tr><td>Returns / Exchange</td><td><a href="#/shipping" data-route="shipping" style="text-decoration:underline;">See Shipping &amp; Returns</a></td></tr>
+      </table>
+
+      <div class="pd-cta-box">
+        <h3 style="font-size:1.05rem; margin-bottom:6px;">Interested in this bag?</h3>
+        <p style="margin-bottom:14px;">Message us on WhatsApp with one tap and we'll help you place your order.</p>
+        <button class="btn btn-whatsapp btn-block order-btn" data-name="${p.name}" type="button">Order on WhatsApp</button>
+      </div>
+    </div>
+  `;
+}
+
+function renderFAQ(){
+  const items = [
+    ["How can I place an order?", "[ADD YOUR ORDERING PROCESS HERE — e.g. message us on WhatsApp with the product name and your details.]"],
+    ["Do you offer Cash on Delivery?", "[ADD YOUR COD POLICY HERE]"],
+    ["Where do you deliver?", "[ADD YOUR DELIVERY AREAS HERE]"],
+    ["How long does delivery take?", "[ADD YOUR DELIVERY TIME HERE]"],
+    ["Can I exchange an item?", "[ADD YOUR EXCHANGE POLICY HERE]"],
+    ["How can I contact Timeless Tote?", "[ADD YOUR PREFERRED CONTACT METHOD HERE — WhatsApp, Instagram DM, or email.]"],
+    ["How do I know which bag is right for me?", "[ADD YOUR SIZING / STYLING GUIDANCE HERE]"],
+  ];
+  document.getElementById('faqList').innerHTML = items.map((it,i)=>`
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-a-${i}" data-faq="${i}">
+        <span>${it[0]}</span><span class="plus">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-${i}">
+        <div class="faq-a-inner">${it[1]}</div>
+      </div>
+    </div>
+  `).join('');
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const open = btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded', String(!open));
+      const panel = document.getElementById(btn.getAttribute('aria-controls'));
+      panel.style.maxHeight = open ? '0px' : panel.scrollHeight+'px';
+    });
+  });
+}
+
+/* ============================================================
+   ROUTER
+============================================================ */
+function setActiveNav(route){
+  document.querySelectorAll('[data-route]').forEach(el=>{
+    el.classList.toggle('active', el.getAttribute('data-route')===route && el.tagName==='A' && el.closest('.primary-nav'));
+  });
+}
+
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const el = document.getElementById('page-'+name);
+  if (el) el.classList.add('active');
+  setActiveNav(name);
+  observeReveals();
+}
+
+function router(){
+  const hash = location.hash.replace(/^#\/?/, '') || 'home';
+  const parts = hash.split('/');
+  const route = parts[0] || 'home';
+  window.scrollTo({top:0});
+  closeMobileMenu();
+
+  if (route === 'product' && parts[1]){
+    renderProductDetail(parts[1]);
+    showPage('product');
+  } else if (['home','shop','about','faq','shipping','contact'].includes(route)){
+    showPage(route);
+  } else {
+    showPage('home');
+  }
+}
+window.addEventListener('hashchange', router);
+
+/* ============================================================
+   MOBILE MENU
+============================================================ */
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+function closeMobileMenu(){
+  mobileMenu.classList.remove('open');
+  hamburgerBtn.setAttribute('aria-expanded','false');
+}
+hamburgerBtn.addEventListener('click', ()=>{
+  const open = mobileMenu.classList.toggle('open');
+  hamburgerBtn.setAttribute('aria-expanded', String(open));
+});
+
+/* ============================================================
+   WHATSAPP BUTTONS (delegated)
+============================================================ */
+document.addEventListener('click', (e)=>{
+  const orderBtn = e.target.closest('.order-btn');
+  if (orderBtn){ window.open(buildWhatsappLink(orderBtn.dataset.name), '_blank', 'noopener'); return; }
+  const thumb = e.target.closest('.pd-thumb');
+  if (thumb){ document.querySelectorAll('.pd-thumb').forEach(t=>t.style.borderColor=''); thumb.style.borderColor='var(--taupe-deep)'; return; }
+});
+['heroWhatsappBtn','contactWhatsappBtn','stickyWhatsappBtn','mobileWhatsappBtn','footerWhatsappBtn'].forEach(id=>{
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('click', (e)=>{ e.preventDefault(); window.open(buildWhatsappLink(), '_blank', 'noopener'); });
+});
+
+/* ============================================================
+   CONTACT FORM (no backend — friendly confirmation only)
+============================================================ */
+document.getElementById('contactForm').addEventListener('submit', (e)=>{
+  e.preventDefault();
+  document.getElementById('formSuccess').classList.add('show');
+  e.target.reset();
+});
+
+/* ============================================================
+   SORT SELECT
+============================================================ */
+document.getElementById('sortSelect').addEventListener('change', (e)=>{
+  currentSort = e.target.value; renderShopGrid();
+});
+
+/* ============================================================
+   SCROLL REVEAL
+============================================================ */
+let revealObserver;
+function observeReveals(){
+  if (!revealObserver){
+    revealObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{ if (entry.isIntersecting){ entry.target.classList.add('in'); revealObserver.unobserve(entry.target); } });
+    }, {threshold:0.12});
+  }
+  document.querySelectorAll('.page.active .reveal:not(.in)').forEach(el=>revealObserver.observe(el));
+}
+
+/* ============================================================
+   INIT
+============================================================ */
+document.getElementById('heroImageSlot').innerHTML = placeholderBlock('hero handbag', true);
+document.getElementById('aboutImageSlot').innerHTML = placeholderBlock('lifestyle photo', true);
+document.querySelectorAll('.feature-item .ficon').forEach((el,i)=>{
+  el.innerHTML = [ICONS.star, ICONS.check, ICONS.chat, ICONS.truck][i];
+});
+renderFeatured();
+renderInstaGrid();
+renderFilterChips();
+renderShopGrid();
+renderFAQ();
+router();
+</script>
+</body>
+</html>
