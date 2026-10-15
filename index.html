@@ -1939,7 +1939,15 @@ function observeReveals(){
 /* ============================================================
    INIT
 ============================================================ */
-document.getElementById('heroImageSlot').innerHTML = placeholderBlock('hero handbag', true);
+
+document.getElementById('heroImageSlot').innerHTML = `
+  <img
+    src="https://raw.githubusercontent.com/hashimtariqx60-wq/timeless-tote.html/main/watermarked_img_1051314468278882515.jpg"
+    alt="Timeless Tote handbag"
+    style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;"
+  >
+`;
+
 document.getElementById('aboutImageSlot').innerHTML = placeholderBlock('lifestyle photo', true);
 document.querySelectorAll('.feature-item .ficon').forEach((el,i)=>{
   el.innerHTML = [ICONS.star, ICONS.check, ICONS.chat, ICONS.truck][i];
