@@ -282,6 +282,29 @@
 </style>
 </head>
 <body>
+
+<section class="hero-intro">
+  <div class="hero-content">
+    <p class="hero-tagline">TIMELESS TOTE</p>
+    <h1>Elegance in Every Detail.</h1>
+    <p class="hero-description">
+      Discover handbags designed for every moment.
+      Find your perfect style, from everyday essentials
+      to elegant statement pieces.
+    </p>
+    <a href="#products" class="hero-button">
+      EXPLORE THE COLLECTION
+    </a>
+  </div>
+
+  <div class="hero-image">
+    <img
+      src="https://raw.githubusercontent.com/hashimtariqx60-wq/timeless-tote.html/main/watermarked_img_1051314468278882515.jpg"
+      alt="Timeless Tote handbag collection"
+    >
+  </div>
+</section>
+  
 <a href="#main" class="skip-link">Skip to content</a>
 
 <!-- ============================================================
@@ -370,6 +393,7 @@
           <p>Discover the pieces made to complement your everyday style.</p>
         </div>
         <div class="product-grid reveal" id="featuredGrid"></div>
+<div id="products"></div>
         <div style="text-align:center; margin-top:36px;">
           <a href="#/shop" class="btn btn-outline" data-route="shop">View Full Collection</a>
         </div>
@@ -1199,6 +1223,80 @@ router();
   .page.active{display:block;}
 
   .badge-sample{display:inline-block; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--taupe-deep); background:var(--beige); padding:3px 9px; border-radius:3px; margin-bottom:10px; font-weight:600;}
+
+/* Timeless Tote Homepage Intro */
+.hero-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 70px 7%;
+  background: #f5f0e8;
+  color: #30271f;
+}
+
+.hero-content {
+  max-width: 520px;
+}
+
+.hero-tagline {
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #92785e;
+  margin-bottom: 18px;
+}
+
+.hero-content h1 {
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.1;
+  margin: 0 0 22px;
+  font-family: Georgia, serif;
+}
+
+.hero-description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #6b6055;
+  margin-bottom: 30px;
+}
+
+.hero-button {
+  display: inline-block;
+  background: #30271f;
+  color: #fff;
+  padding: 15px 25px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 12px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.hero-button:hover {
+  background: #806448;
+  transform: translateY(-2px);
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .hero-intro {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 45px 6%;
+  }
+
+  .hero-image img {
+    height: 340px;
+  }
+}
+
 </style>
 </head>
 <body>
